@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+<nav *ngIf="isViewMenu" class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <a class="navbar-brand" routerLink="" >MoviesDotCom</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -14,9 +14,6 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/users/new" routerLinkActive="active">Register</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" [routerLink]="['movie', idMovie.value ]" routerLinkActive="active">Movie com id</a>
-      </li> -->
     </ul>
   </div>
 </nav>
