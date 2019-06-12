@@ -13,7 +13,7 @@
 
 <ul class="list-unstyled">
   <li class="media" *ngFor="let movie of movies">
-    <a [routerLink]="[ '/movie', movie.id ]">
+    <a [routerLink]="[ '/movies', movie.id ]">
       <img class="mr-3" src="{{baseImg}}{{movie.poster_path}}">
     </a>
     <div class="media-body">

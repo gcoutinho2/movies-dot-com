@@ -4,7 +4,7 @@ import { NewUserComponent } from './new/new.component';
 import { UsersComponent } from './users.component';
 
 const userRoutes = [
-    { path: 'users', component: UsersComponent, children: [
+    { path: '', component: UsersComponent, children: [
         { path: 'new', component: NewUserComponent }
     ]},
 ];
