@@ -12,6 +12,9 @@ export class MovieService {
   private firstUrlDetail = 'https://api.themoviedb.org/3/movie/';
   private endUrlDetail = `?api_key=${this.apiKey}&language=en-US`;
 
+  private genresUrl = `https://api.themoviedb.org/3/genre/movie/list?api_key=${this.apiKey}`;
+  private moviesByGenreUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${this.apiKey}`;
+
   constructor(private http: HttpClient) { }
 
   getMovies(page:number) {
@@ -20,5 +23,13 @@ export class MovieService {
 
   get(id:number){
     return this.http.get<any>(`${this.firstUrlDetail + id + this.endUrlDetail}`);
+  }
+
+  getGenres() {
+    return this.http.get<any[]>(`${this.genresUrl}`);
+  }
+
+  listMoviesByGenre(id:string, page:number = 1) {
+    return this.http.get<any[]>(`${this.moviesByGenreUrl}` + `&with_genres=` + id + `&page=` + page);
   }
 }

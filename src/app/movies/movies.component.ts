@@ -9,31 +9,55 @@ import { MovieService } from './movie.service';
 export class MoviesComponent implements OnInit {
 
   movies: Array<any>;
-  baseImg = 'https://image.tmdb.org/t/p/w300';
-  totalPages:number;
-  page: number = 1; 
+  genres: Array<any>;
+  baseImg = 'https://image.tmdb.org/t/p/w400';
+  totalPages: number;
+  page: number = 1;
+  isViewGenres: boolean = true;
+  genreId: string;
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-    this.list();
+    //this.list();
+    this.listGenres();
   }
 
-  list(page:number = 1) {
+  list(page: number = 1) {
     this.movieService.getMovies(page)
       .subscribe((data) => {
-        console.log(data['results']);
         this.totalPages = data['total_pages'];
         this.movies = data['results'];
       });
   }
 
-  pagination(isNext:boolean) {
+  pagination(isNext: boolean) {
     if (isNext && this.totalPages != this.page) this.page++;
-    
+
     if (!isNext && this.page > 1) this.page--;
 
-    this.list(this.page);
+    this.getFilter(this.genreId, this.page);
   }
+
+  listGenres() {
+    this.movieService.getGenres()
+      .subscribe((data) => {
+        this.genres = data['genres'];
+      });
+  }
+
+  getFilter(id:string, page:number = 1){
+    this.movieService.listMoviesByGenre(id, page)
+    .subscribe((data) => {
+      this.genreId = id;
+      this.totalPages = data['total_pages'];
+      this.movies = data['results'];
+    });
+  }
+
+  setVisibleGenres(){
+    return this.isViewGenres = !this.isViewGenres;
+  }
+  
 
 }

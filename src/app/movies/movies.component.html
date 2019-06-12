@@ -9,16 +9,39 @@
       <a class="page-link" *ngIf="page < totalPages" (click)="pagination(true)">Next</a>
     </li>
   </ul>
+
+  <button (click)="setVisibleGenres()">View Genres</button>
 </nav>
 
-<ul class="list-unstyled">
-  <li class="media" *ngFor="let movie of movies">
-    <a [routerLink]="[ '/movies', movie.id ]">
-      <img class="mr-3" src="{{baseImg}}{{movie.poster_path}}">
-    </a>
-    <div class="media-body">
-      <h5 class="mt-0 mb-1">{{movie.title}}</h5>
 
+
+
+<div class="row genres" [ngClass]="{'d-none': isViewGenres}">
+  <div class="genre" *ngFor="let genre of genres">
+    <div class="card">
+      <div class="card-body">
+        <a (click)="getFilter(genre.id)">
+          <h5 class="card-title">{{genre.id}} - {{genre.name}}</h5>
+        </a>
+      </div>
     </div>
-  </li>
-</ul>
+  </div>
+</div>
+
+<section id="content-images">
+  <div class="project" *ngFor="let movie of movies">
+    <img class="project__image" src="{{baseImg}}{{movie.poster_path}}" />
+    <p>{{movie.title}}</p>
+    <h3 class="grid__title"> </h3>
+    <div class="grid__overlay">
+      <button class="viewbutton">view more</button>
+    </div>
+  </div>
+
+  <div class="overlay">
+    <div class="overlay__inner">
+      <button class="close">close X</button>
+      <img>
+    </div>
+  </div>
+</section>
