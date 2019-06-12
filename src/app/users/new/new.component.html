@@ -1,22 +1,47 @@
-
-<form>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <h2 class="form-signin-heading">Register</h2>
   <div class="form-group">
-    <input type="text" class="form-control" id="name" placeholder="Name">
+    <input type="text" class="form-control" placeholder="Name" id="name" name="name" [(ngModel)]="user.name" required
+      #name="ngModel">
+
+    <div class="error-form" *ngIf="!name.valid && name.touched">
+      <span>
+        {{fieldRequired}}
+      </span>
+    </div>
+
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" id="email" placeholder="Email">
+    <input type="text" class="form-control" name="email" id="email" placeholder="Email" [(ngModel)]="user.email"
+      required #email="ngModel">
+    <div class="error-form" *ngIf="!email.valid && email.touched">
+      <span>
+        {{fieldRequired}}
+      </span>
+    </div>
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" id="pass" placeholder="Password">
+    <input type="password" class="form-control" name="pass" id="pass" placeholder="Password" [(ngModel)]="user.pass"
+      required #pass="ngModel">
+    <div class="error-form" *ngIf="!pass.valid && pass.touched">
+      <span>
+        {{fieldRequired}}
+      </span>
+    </div>
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" id="rePass" placeholder="Repeat Password">
+    <input type="password" class="form-control" name="rePass" id="rePass" placeholder="Repeat Password"
+      [(ngModel)]="user.rePass" required #rePass="ngModel">
+    <div class="error-form" *ngIf="!pass.valid && pass.touched">
+      <span>
+        {{fieldRequired}}
+      </span>
+    </div>
   </div>
 
   <button type="submit" class="btn btn-primary">Register</button>
 
-  <div class="form-group">     
-      <a [routerLink]="[ '/login']">Já tenho cadastro</a>
+  <div class="form-group">
+    <a [routerLink]="[ '/login']">Já tenho cadastro</a>
   </div>
 </form>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/login/user';
 
 @Component({
   selector: 'app-new',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewUserComponent implements OnInit {
 
+  public user = {} as User;
+  fieldRequired = 'Campo Obrigatório';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit(form) {
+    console.log(form);
   }
 
 }
