@@ -1,7 +1,24 @@
-<p>
-  movie-detail works!
-</p>
 
 <h5>
-  {{id}}
+  {{movie.original_title}}
 </h5>
+
+
+<div class="row">
+  <div class="col-sm-4">
+    <img src="{{baseImg}}{{movie.backdrop_path}}">
+  </div>
+
+  <div class="col-sm-6">
+    <h2>Overview</h2>
+    <p>{{movie.overview}}</p>
+
+    <span>Release Date: {{movie.release_date}}</span> <p></p>
+    <span>Status: {{movie.status}}</span> <p></p>
+    <ul>
+      <li *ngFor="let genre of movie.genres">
+        {{genre.name}}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,15 +1,15 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination pg-blue justify-content-center">
+    <li class="page-item">
+      <a class="page-link" *ngIf="page > 1" (click)="pagination(false)">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link">{{page}}</a></li>
 
-<div class="row">
-  <div class="col-sm-1">
-    <button *ngIf="page > 1" (click)="pagination(false)" class="button">Back</button>
-  </div>
-  <div class="col-sm-1">
-    <p>{{page}}</p>
-  </div>
-  <div class="col-sm-1">
-    <button *ngIf="page < totalPages" (click)="pagination(true)" class="button">Next</button>
-  </div>
-</div>
+    <li class="page-item">
+      <a class="page-link" *ngIf="page < totalPages" (click)="pagination(true)">Next</a>
+    </li>
+  </ul>
+</nav>
 
 <ul class="list-unstyled">
   <li class="media" *ngFor="let movie of movies">
@@ -17,10 +17,8 @@
       <img class="mr-3" src="{{baseImg}}{{movie.poster_path}}">
     </a>
     <div class="media-body">
-      <h5 class="mt-0 mb-1" >{{movie.title}}</h5>
-     
+      <h5 class="mt-0 mb-1">{{movie.title}}</h5>
+
     </div>
   </li>
 </ul>
-
-

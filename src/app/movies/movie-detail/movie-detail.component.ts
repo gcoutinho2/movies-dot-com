@@ -13,6 +13,7 @@ export class MovieDetailComponent implements OnInit {
   id: number;
   inscription: Subscription;
   movie: any;
+  baseImg = 'https://image.tmdb.org/t/p/w500';
 
   constructor(
     private route: ActivatedRoute, 
@@ -35,8 +36,9 @@ export class MovieDetailComponent implements OnInit {
   getMovie(id:number) {
     this.movieService.get(id)
     .subscribe((data) => {
-      console.log(data);
+
       this.movie = data;
+      console.log(this.movie);
     });
   }
 
