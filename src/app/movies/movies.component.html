@@ -1,3 +1,15 @@
 <p>
-  movies works!
+   List of Movies
 </p>
+
+<ul class="list-unstyled">
+  <li class="media" *ngFor="let movie of movies">
+    <img class="mr-3" src="{{baseImg}}{{movie.poster_path}}">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">{{movie.title}}</h5>
+      
+    </div>
+  </li>
+</ul>
+
+

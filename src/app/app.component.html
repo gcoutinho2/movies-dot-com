@@ -1,16 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">MoviesDotCom</a>
+  <a class="navbar-brand" routerLink="" >MoviesDotCom</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="[ '/' ]" routerLinkActive="active"> Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/login" routerLinkActive="active"> Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="[ '/movies' ]" routerLinkActive="active">Movies</a>
+        <a class="nav-link" routerLink="" routerLinkActive="active">Movies</a>
       </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" [routerLink]="['movie', idMovie.value ]" routerLinkActive="active">Movie com id</a>
+      </li> -->
     </ul>
   </div>
 </nav>
