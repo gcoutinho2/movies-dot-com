@@ -11,12 +11,14 @@ import { AppComponent } from './app.component';
 import { AuthService } from './login/auth.service';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     FormsModule,
