@@ -1,23 +1,20 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
-import { MovieService } from './movies/movie.service';
-import { MoviesComponent } from './movies/movies.component';
+import { MoviesModule } from './movies/movies.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MoviesComponent,
-    MovieDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,10 +22,12 @@ import { MoviesComponent } from './movies/movies.component';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
+    MoviesModule,
+    HttpClientModule,
+    RouterModule,
     AppRoutingModule,
-    HttpClientModule
   ],
-  providers: [MovieService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
