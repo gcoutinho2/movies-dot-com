@@ -1,0 +1,19 @@
+.list-unstyled {
+    padding: 0px 10px;
+
+    li {
+        width: 300px;
+        display: inline-block;
+        margin-right: 15px;
+        
+        .media-body {
+            h5 {
+                font-size: 1.0em;
+                height: 75px;
+                text-align: center;
+                line-height: 3;
+            }
+        }
+
+    }
+}
