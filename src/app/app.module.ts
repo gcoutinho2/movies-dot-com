@@ -6,11 +6,10 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { routing } from './app.routing';
 import { LoginComponent } from './login/login.component';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
-import { MoviesComponent } from './movies/movies.component';
 import { MovieService } from './movies/movie.service';
+import { MoviesComponent } from './movies/movies.component';
 
 
 @NgModule({
@@ -26,7 +25,7 @@ import { MovieService } from './movies/movie.service';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
-    routing,
+    AppRoutingModule,
     HttpClientModule
   ],
   providers: [MovieService],

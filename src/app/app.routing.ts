@@ -1,5 +1,6 @@
 import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { LoginComponent } from './login/login.component';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
 import { MoviesComponent } from './movies/movies.component';
