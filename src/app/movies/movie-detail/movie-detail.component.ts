@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MovieService } from './../movie.service';
 
@@ -12,9 +12,12 @@ export class MovieDetailComponent implements OnInit {
 
   id: number;
   inscription: Subscription;
-  movie: object;
+  movie: any;
 
-  constructor(private route: ActivatedRoute, private movieService: MovieService) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private movieService: MovieService
+  ) {}
 
   ngOnInit() {
     this.inscription = this.route.params

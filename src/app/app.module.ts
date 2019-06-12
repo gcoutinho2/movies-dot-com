@@ -18,7 +18,7 @@ import { MovieService } from './movies/movie.service';
     AppComponent,
     LoginComponent,
     MoviesComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
   ],
   imports: [
     BrowserModule,
