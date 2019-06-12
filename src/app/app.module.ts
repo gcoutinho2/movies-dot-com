@@ -1,3 +1,4 @@
+import { UsersModule } from './users/users.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,11 +19,11 @@ import { MoviesModule } from './movies/movies.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     MoviesModule,
+    UsersModule,
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
