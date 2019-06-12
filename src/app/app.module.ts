@@ -10,6 +10,7 @@ import { routing } from './app.routing';
 import { LoginComponent } from './login/login.component';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
 import { MoviesComponent } from './movies/movies.component';
+import { MovieService } from './movies/movie.service';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { MoviesComponent } from './movies/movies.component';
     routing,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

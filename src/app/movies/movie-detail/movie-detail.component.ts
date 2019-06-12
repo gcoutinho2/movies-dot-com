@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { MovieService } from './../movie.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -9,22 +10,31 @@ import { Subscription } from 'rxjs';
 })
 export class MovieDetailComponent implements OnInit {
 
-  id: string;
+  id: number;
   inscription: Subscription;
+  movie: object;
 
-  constructor(private route: ActivatedRoute) {
-    // this.id = this.route.snapshot.params['id'];
-  }
+  constructor(private route: ActivatedRoute, private movieService: MovieService) { }
 
   ngOnInit() {
     this.inscription = this.route.params
       .subscribe((params: any) => {
         this.id = params['id'];
+
+        this.getMovie(this.id);
     });
   }
 
   ngOnDestroy() {
     this.inscription.unsubscribe();    
+  }
+
+  getMovie(id:number) {
+    this.movieService.get(id)
+    .subscribe((data) => {
+      console.log(data);
+      this.movie = data;
+    });
   }
 
 }
