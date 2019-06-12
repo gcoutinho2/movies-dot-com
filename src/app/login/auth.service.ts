@@ -24,20 +24,28 @@ export class AuthService {
 
       this.router.navigate(['/movies'])
     } else {
-      this.isAuthenticatedUser = false;
-
-      this.menuViewEmitter.emit(false);
+      this.logout();
 
       alert('Usuário/senha inválidos');
     }
   }
 
+  logout() {
+    this.isAuthenticatedUser = false;
+    this.menuViewEmitter.emit(false);
+    this.router.navigate(['/login']);
+  }
+
   getUser() {
     return {
       name: 'Zé',
-      email: 'user@email.com',
-      password: '12345'
+      email: 'a',
+      password: 'a'
     }
+  }
+
+  userAuthenticated() {
+    return this.isAuthenticatedUser;
   }
 
   

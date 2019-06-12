@@ -18,4 +18,8 @@ export class AppComponent {
   ngOnInit() {
     this.authService.menuViewEmitter.subscribe((show => this.isViewMenu = show));
   }
+
+  logout() {
+    this.authService.logout();
+  }
 }

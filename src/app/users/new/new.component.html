@@ -1,8 +1,6 @@
-<p>
-Register
-</p>
 
 <form>
+  <h2 class="form-signin-heading">Register</h2>
   <div class="form-group">
     <input type="text" class="form-control" id="name" placeholder="Name">
   </div>
@@ -17,4 +15,8 @@ Register
   </div>
 
   <button type="submit" class="btn btn-primary">Register</button>
+
+  <div class="form-group">     
+      <a [routerLink]="[ '/login']">Já tenho cadastro</a>
+  </div>
 </form>
