@@ -17,14 +17,14 @@ export class MovieDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.inscription = this.route.params
-    //   .subscribe((params: any) => {
-    //     this.id = params['id'];
-    // });
+    this.inscription = this.route.params
+      .subscribe((params: any) => {
+        this.id = params['id'];
+    });
   }
 
   ngOnDestroy() {
-    // this.inscription.unsubscribe();    
+    this.inscription.unsubscribe();    
   }
 
 }

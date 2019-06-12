@@ -4,10 +4,12 @@
 
 <ul class="list-unstyled">
   <li class="media" *ngFor="let movie of movies">
-    <img class="mr-3" src="{{baseImg}}{{movie.poster_path}}">
+    <a [routerLink]="[ '/movie', movie.id ]">
+      <img class="mr-3" src="{{baseImg}}{{movie.poster_path}}">
+    </a>
     <div class="media-body">
-      <h5 class="mt-0 mb-1">{{movie.title}}</h5>
-      
+      <h5 class="mt-0 mb-1" >{{movie.title}}</h5>
+     
     </div>
   </li>
 </ul>
