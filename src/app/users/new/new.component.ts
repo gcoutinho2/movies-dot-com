@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/login/user';
+import { Router } from '@angular/router';
+import { User } from '../models/user.model';
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-new',
@@ -12,16 +14,23 @@ export class NewUserComponent implements OnInit {
   public user = {} as User;
   fieldRequired = 'Campo Obrigatório';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
+    
   }
 
   onSubmit(form) {
-    console.log(form);
+    this.user = form.value;
 
-    this.http.post('', JSON.stringify(form.value))
-      .subscribe()
+    this.userService.save(this.user);
+
+    alert("Dados salvos com sucesso");
+    return this.router.navigate(['/login'])
+
   }
 
 }

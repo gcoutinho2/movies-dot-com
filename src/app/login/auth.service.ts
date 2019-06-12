@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from './user';
+import { LocalStorageService } from 'angular-2-local-storage';
+import { User } from '../users/models/user.model';
 
 
 @Injectable({
@@ -9,15 +10,21 @@ import { User } from './user';
 export class AuthService {
 
   private isAuthenticatedUser: boolean = false; 
+  apiKey:string = 'localKey';
 
   menuViewEmitter = new EventEmitter<boolean>();
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private localStorage: LocalStorageService
+  ) { }
 
   login(user: User) {
     let mockUser = this.getUser();
+    let userLocal = this.getUserLocalStorage();
 
-    if (user.email === mockUser.email && user.password === mockUser.password) {
+    if (user.email === mockUser.email && user.password === mockUser.password || 
+      user.email === userLocal['email'] && user.password === userLocal['pass']) {
       this.isAuthenticatedUser = true;
 
       this.menuViewEmitter.emit(true);
@@ -38,6 +45,7 @@ export class AuthService {
 
   getUser() {
     return {
+      id: 1,
       name: 'Zé',
       email: 'a',
       password: 'a'
@@ -46,6 +54,10 @@ export class AuthService {
 
   userAuthenticated() {
     return this.isAuthenticatedUser;
+  }
+
+  getUserLocalStorage() {
+    return this.localStorage.get(this.apiKey);
   }
 
   

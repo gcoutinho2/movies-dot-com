@@ -30,7 +30,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-    LocalStorageModule
+    LocalStorageModule.forRoot({
+      storageType: 'localStorage'
+    })
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
