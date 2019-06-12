@@ -8,6 +8,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { LoginComponent } from './login/login.component';
 import { MoviesComponent } from './movies/movies.component';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MoviesComponent } from './movies/movies.component';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
