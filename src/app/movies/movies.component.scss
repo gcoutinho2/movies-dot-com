@@ -16,8 +16,6 @@ nav {
    }
 }
 
-
-
 .genres {
     .genre {
         width:23%;
@@ -94,7 +92,6 @@ button {
   }
 }
 
-// project hover overlay
 .project:hover .grid__overlay {
   transform: translateY(0%);
 }
@@ -128,46 +125,6 @@ button {
   }
 }
 
-//project popup overlay
-
-.overlay {
-  position: fixed;
-  background: rgba($dark, 0.7);
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: none;
-  z-index: 3;
-}
-.overlay.open {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
-
-.overlay__inner {
-  background: $white;
-  width: 700px;
-  padding: 20px;
-  position: relative;
-  opacity: 1;
-}
-
-.close {
-  position: absolute;
-  top: 3px;
-  right: 10px;
-  background: none;
-  outline: 0;
-  color: $dark;
-  border: 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  &:hover {
-    color: $secondary;
-  }
-}
 
 .project__image {
   margin-left: 0;

@@ -26,7 +26,7 @@ export class MoviesComponent implements OnInit {
     if (isNext && this.totalPages != this.page) this.page++;
 
     if (!isNext && this.page > 1) this.page--;
-
+    
     this.getFilter(this.genreId, this.page);
   }
 
@@ -48,6 +48,14 @@ export class MoviesComponent implements OnInit {
 
   setVisibleGenres(){
     return this.isViewGenres = !this.isViewGenres;
+  }
+
+  listPopularMovies(page:number = 1){
+    this.movieService.listPopularMovies(page)
+    .subscribe((data) => {
+      this.totalPages = data['total_pages'];
+      this.movies = data['results'];
+    });
   }
   
 
