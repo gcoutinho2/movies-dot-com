@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MovieService } from './../movie.service';
 
@@ -13,7 +13,7 @@ export class MovieDetailComponent implements OnInit {
   id: number;
   inscription: Subscription;
   movie: any;
-  baseImg = 'https://image.tmdb.org/t/p/w500';
+  baseImg = 'https://image.tmdb.org/t/p/w1280';
 
   constructor(
     private route: ActivatedRoute, 

@@ -1,23 +1,33 @@
-<form>
-  <h2 class="form-signin-heading">Login</h2>
-  <div class="form-group">
-    <input [(ngModel)]="user.email" type="text" class="form-control" name="username" placeholder="E-mail" required=""
-      autofocus="" />
+
+
+<div class="grid align__item">
+
+  <div class="register">
+
+    <img src="../../assets/imgs/login.png">
+
+    <h3>Login</h3>
+
+    <form action="" method="post" class="form">
+
+      <div class="form__field">
+        <input [(ngModel)]="user.email" type="text" class="form-control" name="username" placeholder="E-mail"
+          required="" autofocus="" />
+      </div>
+
+      <div class="form__field">
+        <input [(ngModel)]="user.password" type="password" class="form-control" name="password" placeholder="Password"
+          required="" />
+      </div>
+
+      <div class="form__field">
+        <input type="submit" (click)="login()" value="Login">
+      </div>
+
+    </form>
+
+    <p> <a [routerLink]="[ '/users/new']">Sign up</a></p>
+
   </div>
-  <div class="form-group">
-    <input [(ngModel)]="user.password" type="password" class="form-control" name="password" placeholder="Password"
-      required="" />
-  </div>
 
-  <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
-
-  <div class="form-group">
-    <a [routerLink]="[ '/users/new']">Não possui cadastro?</a>
-  </div>
-</form>
-
-
-
-
-
-
+</div>

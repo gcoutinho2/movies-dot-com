@@ -13,7 +13,7 @@
 
 <div class="row filter-button">
   <div class="col-sm-12">
-      <button class="btn btn-secondary btn-lg filter-button" (click)="setVisibleGenres()">View Genres</button>
+    <button class="btn btn-secondary btn-lg filter-button" (click)="setVisibleGenres()">View Genres</button>
   </div>
 
 </div>
@@ -21,13 +21,15 @@
 
 <div class="row genres" [ngClass]="{'d-none': isViewGenres}">
   <div class="genre" *ngFor="let genre of genres">
-    <div class="card">
-      <div class="card-body">
-        <a (click)="getFilter(genre.id)">
+    <a (click)="getFilter(genre.id)">
+      <div class="card">
+        <div class="card-body">
+
           <h5 class="card-title">{{genre.id}} - {{genre.name}}</h5>
-        </a>
+
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 
@@ -41,10 +43,4 @@
     </div>
   </div>
 
-  <div class="overlay">
-    <div class="overlay__inner">
-      <button class="close">close X</button>
-      <img>
-    </div>
-  </div>
 </section>
