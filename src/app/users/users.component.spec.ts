@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UsersComponent } from './users.component';
+import { NewUserComponent } from './new/new.component';
+import { CommonModule } from '@angular/common';
+import { UsersRoutingModule } from './users.routing.module';
+import { FormsModule } from '@angular/forms';
+import { ChildrenOutletContexts } from '@angular/router';
 
 describe('UsersComponent', () => {
   let component: UsersComponent;
@@ -8,7 +13,17 @@ describe('UsersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UsersComponent ]
+      declarations: [ 
+        UsersComponent,
+        NewUserComponent 
+      ],
+      imports: [ 
+        CommonModule,
+        UsersRoutingModule,
+        FormsModule
+    ],
+    providers:[ChildrenOutletContexts]
+   
     })
     .compileComponents();
   }));
