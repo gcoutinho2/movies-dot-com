@@ -9,11 +9,14 @@
       <a class="page-link" *ngIf="page < totalPages" (click)="pagination(true)">Next</a>
     </li>
   </ul>
-
-  <button (click)="setVisibleGenres()">View Genres</button>
 </nav>
 
+<div class="row filter-button">
+  <div class="col-sm-12">
+      <button class="btn btn-secondary btn-lg filter-button" (click)="setVisibleGenres()">View Genres</button>
+  </div>
 
+</div>
 
 
 <div class="row genres" [ngClass]="{'d-none': isViewGenres}">
@@ -34,7 +37,7 @@
     <p>{{movie.title}}</p>
     <h3 class="grid__title"> </h3>
     <div class="grid__overlay">
-      <button class="viewbutton">view more</button>
+      <button [routerLink]="[ '/movies', movie.id ]" class="viewbutton">view more</button>
     </div>
   </div>
 

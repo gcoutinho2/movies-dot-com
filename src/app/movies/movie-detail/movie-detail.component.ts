@@ -21,7 +21,7 @@ export class MovieDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.inscription = this.route.params
+   return this.inscription = this.route.params
       .subscribe((params: any) => {
         this.id = params['id'];
 
@@ -34,7 +34,7 @@ export class MovieDetailComponent implements OnInit {
   }
 
   getMovie(id:number) {
-    this.movieService.get(id)
+    return this.movieService.get(id)
     .subscribe((data) => {
 
       this.movie = data;

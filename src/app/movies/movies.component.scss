@@ -10,12 +10,13 @@ $dark: #474545;
 $ease: all 0.3s ease-in-out;
 
 
-
 nav {
    .page-link {
        cursor: pointer;
    }
 }
+
+
 
 .genres {
     .genre {
@@ -38,8 +39,6 @@ nav {
         display: none;
     }
 }
-
-
 
 
 body {
@@ -172,4 +171,13 @@ button {
 
 .project__image {
   margin-left: 0;
+}
+
+
+.btn-lg {
+    &.filter-button {
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 20px;
+    }
 }

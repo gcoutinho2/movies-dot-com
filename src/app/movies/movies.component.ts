@@ -19,18 +19,9 @@ export class MoviesComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-    //this.list();
     this.listGenres();
   }
-
-  list(page: number = 1) {
-    this.movieService.getMovies(page)
-      .subscribe((data) => {
-        this.totalPages = data['total_pages'];
-        this.movies = data['results'];
-      });
-  }
-
+  
   pagination(isNext: boolean) {
     if (isNext && this.totalPages != this.page) this.page++;
 
